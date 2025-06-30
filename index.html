@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micah Pirikisi | Portfolio</title>
+  <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bgVideo" class="background">
+    <source src="./resources/imgs and vids/vids/blue-fantasy-river.3840x2160.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+  <div class="overlay"></div>
+
+  <div class='press-start'>Click anywhere to start</div>
+
+  <section class="menu slide-up">
+    <h1>Welcome, Adventurer!</h1>
+    <ul>
+      <li id="aboutBtn">About Me</li>
+      <li id="projectsBtn">Projects</li>
+      <li id="contactBtn">Contact</li>
+    </ul>
+  </section>
+
+  <!-- About Me Modal -->
+  <article id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="aboutClose">&times;</span>
+      <h2>About <span>Micah Piriksi</span></h2>
+      <p><span>I'm a passionate web developer with a game-inspired spirit and a storyteller's eye.</span><br><br>Rooted in creative expression and driven by curiosity, I can bring your business to the World Wide Web through thoughtful web design, clean code, and playful innovation. Whether you're building a bold digital brand or a subtle but rich website, I'm here to deliver your product in an engaging form, one click at a time.</p>
+      <img src="./resources/imgs and vids/imgs/icons8-html-150.png">
+      <img src="./resources/imgs and vids/imgs/icons8-css3-210.png">
+      <img src="./resources/imgs and vids/imgs/icons8-javascript-logo-150.png">
+    </div>
+  </article>
+
+  <!-- Projects Modal -->
+<article id="projectsModal" class="modal">
+  <div class="modal-content wide-modal">
+    <span class="close" id="projectsClose">&times;</span>
+    <h2>Click a Project to View It</h2>
+    <section class="project-grid">
+      <!-- Codecademy Projects -->
+      <div class="project-card">
+        <div class="screenshot-slider">
+          <img src="./resources/imgs and vids/imgs/wt 1.png" class="slide active" alt="Screenshot 1" />
+          <img src="./resources/imgs and vids/imgs/w2.png" class="slide" alt="Screenshot 2" />
+          <img src="./resources/imgs and vids/imgs/w3.png" class="slide" alt="Screenshot 3" />
+          <img src="./resources/imgs and vids/imgs/w4.png" class="slide" alt="Screenshot 3" />
+          <button class="arrow left" onclick="prevSlide(this)">&#10094;</button>
+          <button class="arrow right" onclick="nextSlide(this)">&#10095;</button>
+        </div>
+        <h3>Wyverns & Taxes</h3>
+        <p>Created a responsive, mobile-friendly website for the fictional Wyverns & Taxes writing group, featuring adaptive layouts, accessible text, and a custom hamburger navigation menu.</p>
+        <a href="file:///C:/Users/micah/OneDrive/Documents/Coding_Projects/Wyverns&Taxes/index.html" target="_blank">See Website</a>
+      </div>
+
+      <div class="project-card">
+        <img src="./resources/imgs and vids/imgs/project2-thumbnail.jpg" alt="Project 2" />
+        <h3>Portfolio Landing</h3>
+        <p>Responsive landing page showcasing key sections and animations.</p>
+        <a href="https://your-link.com" target="_blank">See Website</a>
+      </div>
+
+      <div class="project-card">
+        <img src="./resources/imgs and vids/imgs/project3-thumbnail.jpg" alt="Project 3" />
+        <h3>City Skyline</h3>
+        <p>A pixel-art styled skyline using pure CSS and creativity.</p>
+        <a href="https://your-link.com" target="_blank">See Website</a>
+      </div>
+
+      <!-- Add more rows here -->
+    </section>
+  </div>
+</article>
+
+
+  <!-- Contact Modal -->
+  <article id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="contactClose">&times;</span>
+      <h2>Contact</h2>
+      <p>Reach out at <a href="mailto:micahpirikisi@gmail.com" style="color:#ffe600; text-decoration: none;">micahpirikisi@gmail.com</a><br>or +27 72 026 3012</p>
+    </div>
+</article>
+
+  <script src="./resources/js/index.js"></script>
+</body>
+</html>

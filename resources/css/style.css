@@ -1,0 +1,287 @@
+/* Reset & Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, cursive;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Background */
+/* Video Background Styling */
+.background{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;  
+  z-index: -1;         
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: -1;
+}
+
+/* Press Start Text */
+.press-start {
+  position: absolute;
+  top: 80%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  cursor: pointer;
+  width: 80%;
+  max-width: 500px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 5px #ffe600, 0 0 10px #ffe600;
+
+}
+
+/* Initial state - push menu downward & hide */
+.menu.slide-up {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 100vh);
+  opacity: 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.menu.revealed {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+/* Optional fade-out for the “Press Start” text */
+.press-start {
+  /* your existing styling */
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+.press-start.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Menu */
+.menu {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  width: 90%;
+}
+
+.menu h1 {
+  font-size: 3em;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+}
+
+.menu ul li {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 0 10px; 
+  font-size: 1.5em;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 0 5px #ffe600, 0 0 10px #ffe600;
+}
+
+.menu ul li:hover {
+  transform: scale(1.05) translateX(20px);
+  text-shadow: 0 0 20px #ffe600, 0 0 30px #ffe600;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px #ffe600, 0 0 10px #ffe600;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffe600, 0 0 30px #ffe600;
+  }
+  100% {
+    text-shadow: 0 0 5px #ffe600, 0 0 10px #ffe600;
+  }
+}
+
+/* Modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #222;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px #ffe600;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+#aboutModal h2 {
+    font-size: 1.2rem;
+}
+
+#aboutModal h2 span {
+    text-decoration: underline;
+    font-size: 1.4rem;
+}
+
+#aboutModal span {
+    font-size: 1.2rem;
+}
+
+#aboutModal img {
+    height: 5rem;
+    width: auto;
+    margin: 0px 10px;
+}
+
+#contactModal p {
+    font-size: 1.2rem;
+}
+
+/* Modal expansion for wide content */
+.wide-modal {
+  max-width: 1000px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.project-card {
+  background: #333;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  height: 150px;
+}
+
+.project-card h3 {
+  color: #ffe600;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  background: #ffe600;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.project-card a:hover {
+  background: #fff200;
+}
+
+/* Screenshot Slider */
+
+.screenshot-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.screenshot-slider img {
+  width: 100%;
+  display: none;
+  height: auto;    /* maintain aspect ratio */
+  max-width: 100%; /* responsive */
+  margin: 0 auto;
+}
+
+.screenshot-slider img.active {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
