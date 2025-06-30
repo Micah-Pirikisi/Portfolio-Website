@@ -1,4 +1,3 @@
-Micah Pirikisi Portfolio
 A game-inspired personal portfolio website showcasing web development skills, projects, and contact details with an immersive user experience.
 
 Overview
