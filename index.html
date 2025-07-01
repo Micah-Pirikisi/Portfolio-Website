@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Micah Pirikisi | Portfolio</title>
   <link rel="stylesheet" href="./resources/css/style.css">
+  <script src="./resources/js/index.js" defer></script>
 </head>
+
 <body>
   <video autoplay muted loop playsinline id="bgVideo" class="background">
     <source src="./resources/imgs and vids/vids/blue-fantasy-river.3840x2160.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
@@ -83,6 +85,13 @@
     </div>
 </article>
 
-  <script src="./resources/js/index.js"></script>
+  <!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" style="display:none;">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <button class="lightbox-arrow left" id="lightboxPrev">&#10094;</button>
+  <img class="lightbox-content" id="lightboxImg" src="" alt="Screenshot">
+  <button class="lightbox-arrow right" id="lightboxNext">&#10095;</button>
+</div>
+
 </body>
 </html>

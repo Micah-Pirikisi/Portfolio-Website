@@ -69,3 +69,61 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(current); // Show initial slide
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Lightbox functionality
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  let currentIndex = 0;
+  let currentSlides = [];
+
+  // Open lightbox on screenshot click (per project)
+  document.querySelectorAll('.screenshot-slider img').forEach(img => {
+    img.addEventListener('click', function() {
+      // Get only the images in the same slider as the clicked image
+      const slider = this.closest('.screenshot-slider');
+      currentSlides = Array.from(slider.querySelectorAll('img'));
+      currentIndex = currentSlides.indexOf(this);
+      showLightboxImg();
+      lightboxModal.classList.add('active');
+      lightboxModal.style.display = 'flex';
+    });
+  });
+
+  function showLightboxImg() {
+    lightboxImg.src = currentSlides[currentIndex].src;
+    lightboxImg.alt = currentSlides[currentIndex].alt || '';
+  }
+
+  // Arrow navigation (within current project)
+  lightboxPrev.onclick = function(e) {
+    e.stopPropagation();
+    if (!currentSlides.length) return;
+    currentIndex = (currentIndex - 1 + currentSlides.length) % currentSlides.length;
+    showLightboxImg();
+  };
+  lightboxNext.onclick = function(e) {
+    e.stopPropagation();
+    if (!currentSlides.length) return;
+    currentIndex = (currentIndex + 1) % currentSlides.length;
+    showLightboxImg();
+  };
+
+  // Close lightbox
+  lightboxClose.onclick = function(e) {
+    e.stopPropagation();
+    lightboxModal.classList.remove('active');
+    lightboxModal.style.display = 'none';
+  };
+
+  // Close lightbox when clicking outside the image
+  lightboxModal.onclick = function(e) {
+    if (e.target === lightboxModal) {
+      lightboxModal.classList.remove('active');
+      lightboxModal.style.display = 'none';
+    }
+  };
+});
